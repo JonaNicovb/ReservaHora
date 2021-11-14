@@ -1,0 +1,38 @@
+
+// TABLE USUARIO
+Create table usuario(
+id int(11) primary key AUTO_INCREMENT,
+nombreUsuario varchar(50) not null,
+password varchar(255) notnull;
+
+
+//TABLE DUEÑO
+Create table dueño(
+rut varchar(15) primary key,
+nombre varchar(50) not null,
+apellido varchar(50) not null,
+direccion varchar(50) not null,
+correo varchar(50) not null,
+telefono int (10) not null,
+nombreMascota varchar(50);
+
+// TABLE MASCOTA
+Create table mascota(
+idMascota(11) primary key AUTO_INCREMENT,
+rutDueño varchar(15) not null,
+tipoMascota varchar(50) not null,
+edad int(10) not null,
+nombreMascota varchar(50) not null,
+CONSTRAINT fk_rut FOREIGN KEY (rutDueño) REFERENCES dueño (rut);
+
+// TABLE AGENDA
+Create table agenda(
+id(11) primary key AUTO_INCREMENT,
+idMascota int(11) not null,
+rutDueño varchar(15) not null,
+NombreMascota varchar(50) not null,
+hora char(10) not null,
+fecha char(10) not null,
+CONSTRAINT fk_id FOREIGN KEY (idMascota) REFERENCES mascota (idMascota),
+CONSTRAINT fk_rut FOREIGN KEY (rutDueño) REFERENCES dueño (rut);
+

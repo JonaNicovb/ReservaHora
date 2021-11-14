@@ -1,0 +1,107 @@
+package com.petSmile;
+
+import java.util.Scanner;
+
+public class Principal {	
+	
+	public static void main(String[] args) {
+
+		Scanner entradaEscaner = new Scanner (System.in);		
+		acciones acc = new acciones();
+		
+		
+		
+		System.out.print("BIENVENIDO\n"
+				+ "1.- INGRESAR UN USUARIO\n"
+				+ "2.- REGISTRAR HORA MEDICA VETERINARIA\n"
+				+ "3.- CERRAR");
+		System.out.print("\nOPCION: ");
+		
+		int opcion = entradaEscaner.nextInt();
+		
+		switch(opcion)
+		{
+		   
+		   case 1 : 
+			   System.out.println("********************************************"); 
+			   	  System.out.print("Ingrese el nombre del usuario : "); 
+			   	  String nombreUsuario = entradaEscaner.next();
+			      
+			      System.out.println(" "); 
+			      
+			      System.out.print("\nIngrese la contraseña del usuario :"); 
+			      String password = entradaEscaner.next();
+			    
+			      acc.insertarUsuario(nombreUsuario, password);
+		      break; 
+		   
+		   case 2:
+			   	System.out.println("BIENVENIDO INGRESEMOS LOS DATOS DEL DUEÑO\n"); 
+			   	System.out.print("Ingresa el rut");
+			   	String rut = entradaEscaner.next();
+			   	System.out.print("Ingresa el nombre");
+			   	String nombre = entradaEscaner.next();
+			   	System.out.print("Ingresa el apellido");
+			   	String apellido = entradaEscaner.next();
+			   	System.out.print("Ingresa la direccion");
+			    String direccion = entradaEscaner.next();
+			    System.out.print("Ingresa tu correo");
+			    String correo = entradaEscaner.next();
+			    System.out.print("Ingresa tu numero de telefono");
+			    int telefono = entradaEscaner.nextInt();
+			    System.out.print("Ingresa el nombre de tu mascota");
+			    String nombreMascota = entradaEscaner.next();
+			    
+			    acc.insertarDueño(rut, nombre, apellido, direccion, correo, telefono, nombreMascota);
+			    
+			    
+			    System.out.println("*****************************************"); 
+			    System.out.println("INGRESEMOS LOS DATOS DE LA MASCOTA\n"); 
+			    System.out.print("Ingresa tipo de mascota");
+			   	String tipoMascota = entradaEscaner.next();
+			   	System.out.print("Ingresa la edad de tu mascota");
+			   	int edad = entradaEscaner.nextInt();
+			   
+			    acc.insertarMascota(rut, tipoMascota, edad, nombreMascota);
+			    
+			    System.out.println("*****************************************"); 
+			    System.out.println("AGENDANDO LA HORA\n"); 
+			    System.out.print("Ingresa tipo de mascota");
+			    int idMascota, String rutDueño, String nombreMascota, String hora, String fecha
+			   	String tipoMascota = entradaEscaner.next();
+			   	System.out.print("Ingresa la edad de tu mascota");
+			   	int edad = entradaEscaner.nextInt();
+			    
+			    /*
+			    String nombreU = entradaEscaner.next();
+			    System.out.print("Ingrese la contraseña del usuario : \n"); 
+			    String clave= entradaEscaner.next();
+				
+		        String nombre = acc.listarNombre();
+		        String contraseña = acc.listarPassword();
+		        
+		        System.out.println(nombre +" - " + contraseña);
+		        
+			    if((nombreU == nombre) && (clave == contraseña)) {
+			    	
+			    	
+			    	
+			    }
+			    else {
+			    	System.out.println("ERROR ");
+			    }
+			   
+			   
+		      break;
+		   
+		   case 3: System.out.print("HASTA LUEGO");
+		   			break;
+			   	
+		   default : 
+			   System.out.print("ADVERTENCIA EL NUMERO NO CORRESPONDE"); */
+			   
+			   
+		}
+		
+	}
+}
